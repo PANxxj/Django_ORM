@@ -42,43 +42,103 @@ graph TB
     M[Connection Pooling] --> G
 ```
 
-## Table of Contents
+## 📖 **How to Use This Guide**
 
-### 🏗️ **FOUNDATION** (Core Architecture)
-1. [Django ORM Architecture](#django-orm-architecture)
-2. [Production Database Configuration](#production-database-configuration)
-3. [Model Design Patterns](#model-design-patterns)
-4. [Migration Strategies](#migration-strategies)
+### 🎯 **Choose Your Learning Path**
 
-### ⚙️ **DEVELOPMENT PATTERNS** (Implementation)
-5. [Advanced Model Relationships](#advanced-model-relationships)
-6. [Custom Managers & QuerySets](#custom-managers--querysets)
-7. [Query Optimization Techniques](#query-optimization-techniques)
-8. [Database Constraints & Validation](#database-constraints--validation)
+> **👨‍💻 New to Django ORM?** → Start with [🟢 Beginner Basics](#-beginner-level-django-orm-basics)  
+> **🔧 Building Production Apps?** → Jump to [🏗️ Foundation](#-foundation)  
+> **⚡ Need Performance?** → Go to [🚀 Performance & Scale](#-performance--scale-production-ready)  
+> **🐛 Having Issues?** → Check [🔍 Troubleshooting](#troubleshooting-common-migration-issues)
 
-### 🔍 **QUERYING MASTERY** (Data Operations)
-9. [Complex Query Patterns](#complex-query-patterns)
-10. [Aggregation & Analytics](#aggregation--analytics)
-11. [Raw SQL Integration](#raw-sql-integration)
-12. [Full-Text Search](#full-text-search)
+### 📚 **Document Structure Overview**
 
-### 🚀 **PERFORMANCE & SCALE** (Production Ready)
-13. [Database Performance Optimization](#database-performance-optimization)
-14. [Caching Strategies](#caching-strategies)
-15. [Database Monitoring](#database-monitoring)
-16. [Scaling Patterns](#scaling-patterns)
-
-### 🧪 **TESTING & QUALITY** (Best Practices)
-17. [Model Testing Strategies](#model-testing-strategies)
-18. [Database Transaction Testing](#database-transaction-testing)
-19. [Performance Testing](#performance-testing)
-20. [Production Deployment](#production-deployment)
+```mermaid
+graph TD
+    A[🟢 Beginner Basics] --> B[🏗️ Foundation]
+    B --> C[⚙️ Development Patterns]  
+    C --> D[🔍 Querying Mastery]
+    D --> E[🚀 Performance & Scale]
+    E --> F[🧪 Testing & Quality]
+    
+    G[📖 Quick Reference] --> H[💡 Examples Gallery]
+    I[🔧 Troubleshooting] --> J[📋 Best Practices Checklist]
+    
+    style A fill:#c8e6c9
+    style B fill:#e3f2fd  
+    style E fill:#fff3e0
+    style I fill:#ffebee
+```
 
 ---
 
-## 🏗️ FOUNDATION
+## 📋 **Table of Contents**
 
-### Django ORM Architecture
+### 🟢 **BEGINNER LEVEL** (Start Here)
+- **[📚 What is Django ORM?](#-what-is-django-orm-simple-explanation)** - *Simple explanation with examples*
+- **[🚀 Quick Start Guide](#your-first-django-models-step-by-step)** - *Your first models in 10 minutes*
+- **[📝 Basic CRUD Operations](#-basic-operations-crud-create-read-update-delete)** - *Create, Read, Update, Delete*
+- **[🔗 Simple Relationships](#relationships-basic-to-advanced)** - *ForeignKey and ManyToMany basics*
+
+### 🏗️ **FOUNDATION** (Core Architecture)
+1. **[🏛️ Django ORM Architecture](#-django-orm-architecture)** - *How it all works under the hood*
+2. **[🗄️ Database Configuration](#production-database-configuration)** - *PostgreSQL, MySQL, Connection pooling*
+3. **[📐 Model Design Patterns](#model-design-patterns)** - *Enterprise-grade model architecture*
+4. **[🔄 Migration Strategies](#migration-strategies)** - *From basic to advanced migrations*
+
+### ⚙️ **DEVELOPMENT PATTERNS** (Implementation)
+5. **[🔗 Advanced Relationships](#joins-and-relationships)** - *Complex model relationships*
+6. **[👨‍💼 Custom Managers & QuerySets](#-custom-managers-and-querysets)** - *Reusable query logic*
+7. **[⚡ Query Optimization](#performance-optimization)** - *Making queries fast*
+8. **[🛡️ Constraints & Validation](#advanced-model-validation-and-business-rules)** - *Data integrity*
+
+### 🔍 **QUERYING MASTERY** (Data Operations)
+9. **[🧠 Complex Query Patterns](#advanced-queries)** - *Advanced filtering and lookups*
+10. **[📊 Aggregation & Analytics](#aggregation-and-annotation)** - *Calculations and reporting*
+11. **[💾 Raw SQL Integration](#raw-sql-and-custom-queries)** - *When ORM isn't enough*
+12. **[🔎 Full-Text Search](#full-text-search)** - *PostgreSQL search features*
+
+### 🚀 **PERFORMANCE & SCALE** (Production Ready)
+13. **[⚡ Performance Optimization](#performance-optimization)** - *Making it blazing fast*
+14. **[💨 Caching Strategies](#-caching-strategies)** - *Redis, Memcached, Query caching*
+15. **[📊 Database Monitoring](#database-monitoring)** - *Metrics and alerting*
+16. **[📈 Scaling Patterns](#scaling-patterns)** - *Read replicas, Sharding*
+
+### 🧪 **TESTING & QUALITY** (Best Practices)
+17. **[🧪 Model Testing](#testing-patterns-for-django-orm)** - *Unit and integration tests*
+18. **[🔄 Transaction Testing](#database-transactions-for-data-integrity)** - *ACID compliance testing*
+19. **[⚡ Performance Testing](#performance-testing)** - *Load testing database operations*
+20. **[🚀 Production Deployment](#production-ready-patterns)** - *Going live safely*
+
+---
+
+### 📖 **Quick Reference Sections**
+
+| Section | What You'll Learn | Time to Read |
+|---------|------------------|--------------|
+| 🟢 **Beginner Basics** | CRUD operations, simple relationships | 30 minutes |
+| 🏗️ **Foundation** | Architecture, migrations, model design | 1 hour |  
+| ⚙️ **Development** | Advanced patterns, optimization | 45 minutes |
+| 🔍 **Querying** | Complex queries, aggregations | 1 hour |
+| 🚀 **Performance** | Scaling, caching, monitoring | 45 minutes |
+| 🧪 **Testing** | Testing strategies, deployment | 30 minutes |
+
+### 💡 **Quick Access**
+- **[📋 Cheat Sheet](#-django-orm-cheat-sheet)** - *Most common operations*
+- **[🔧 Troubleshooting](#troubleshooting-common-migration-issues)** - *Fix common problems*  
+- **[💡 Examples Gallery](#advanced-query-examples-with-complete-json-outputs)** - *Copy-paste solutions*
+- **[📚 Additional Resources](#additional-resources)** - *External links and docs*
+
+---
+
+## 🏗️ **FOUNDATION**
+
+> **📍 You are here:** Foundation → Core Architecture  
+> **⏱️ Estimated time:** 1 hour  
+> **🎯 Goal:** Master Django ORM architecture, database config, and migrations  
+> **⚡ Prerequisites:** Basic Django knowledge, SQL fundamentals
+
+### 🏛️ **Django ORM Architecture**
 
 Django's Object-Relational Mapping layer provides a sophisticated abstraction over database operations, enabling developers to work with database records as Python objects while maintaining fine-grained control over SQL generation and execution.
 
@@ -798,9 +858,658 @@ class BaseBusinessModel(TimestampedModel, SoftDeletableModel, AuditableModel):
 
 ---
 
+### Migration Strategies
+
+Django migrations are Django's way of propagating changes you make to your models (adding fields, deleting models, etc.) into your database schema. Think of migrations as version control for your database structure.
+
+#### Migration Workflow Visualization
+
+```mermaid
+graph TB
+    A[Modify Models] --> B[python manage.py makemigrations]
+    B --> C[Migration Files Created]
+    C --> D{Review Migration Files}
+    D -->|Approved| E[python manage.py migrate]
+    D -->|Issues Found| F[Fix Models/Migration]
+    F --> B
+    E --> G[Database Schema Updated]
+    G --> H[Migration History Recorded]
+    
+    I[Database State] --> J[django_migrations Table]
+    J --> K[Tracks Applied Migrations]
+    
+    L[Rollback Needed?] --> M[python manage.py migrate app_name migration_number]
+    M --> N[Database Rolled Back]
+    
+    style A fill:#e1f5fe
+    style C fill:#f3e5f5
+    style G fill:#e8f5e8
+    style N fill:#fff3e0
+```
+
+#### Migration States and Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> ModelChanges: Developer modifies models.py
+    ModelChanges --> MigrationCreated: makemigrations
+    MigrationCreated --> MigrationReviewed: Developer reviews
+    MigrationReviewed --> MigrationApplied: migrate command
+    MigrationReviewed --> ModelChanges: Issues found, fix models
+    MigrationApplied --> DatabaseUpdated: Schema changes applied
+    DatabaseUpdated --> [*]: Process complete
+    
+    MigrationApplied --> RollbackInitiated: Issue found in production
+    RollbackInitiated --> DatabaseReverted: migrate to previous
+    DatabaseReverted --> ModelChanges: Fix issues and retry
+```
+
+## 🎯 **MIGRATIONS: From Basic to Advanced**
+
+### Basic Migration Commands
+
+#### 1. Creating Migrations (`makemigrations`)
+
+```bash
+# Basic command - creates migrations for all apps
+python manage.py makemigrations
+
+# Create migration for specific app
+python manage.py makemigrations myapp
+
+# Create migration with custom name
+python manage.py makemigrations myapp --name add_user_profile_fields
+
+# Dry run - see what migrations would be created without creating them
+python manage.py makemigrations --dry-run
+
+# Create empty migration (for custom operations)
+python manage.py makemigrations --empty myapp --name custom_data_migration
+```
+
+**What happens when you run `makemigrations`:**
+
+```json
+{
+  "process_explanation": {
+    "step_1": "Django scans all your models.py files",
+    "step_2": "Compares current models with the last migration state", 
+    "step_3": "Detects differences (new fields, deleted models, etc.)",
+    "step_4": "Generates Python migration files describing the changes",
+    "step_5": "Stores migration files in app/migrations/ directory"
+  },
+  
+  "migration_file_structure": {
+    "filename_format": "XXXX_description.py (e.g., 0001_initial.py)",
+    "contains": [
+      "dependencies: list of migrations this depends on",
+      "operations: list of database operations to perform",  
+      "atomic: whether migration runs in a transaction"
+    ]
+  }
+}
+```
+
+#### Example Migration File Anatomy
+
+```python
+# migrations/0002_add_product_fields.py
+from django.db import migrations, models
+import django.db.models.deletion
+
+class Migration(migrations.Migration):
+    
+    # Dependencies - what migrations must run before this one
+    dependencies = [
+        ('myapp', '0001_initial'),
+    ]
+    
+    # Operations - what database changes to make
+    operations = [
+        migrations.AddField(
+            model_name='product',
+            name='description',
+            field=models.TextField(default=''),
+        ),
+        migrations.AddField(
+            model_name='product',
+            name='category',
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                to='myapp.category'
+            ),
+        ),
+        migrations.AlterField(
+            model_name='product',
+            name='price',
+            field=models.DecimalField(decimal_places=2, max_digits=10),
+        ),
+    ]
+```
+
+#### 2. Applying Migrations (`migrate`)
+
+```bash
+# Apply all pending migrations
+python manage.py migrate
+
+# Apply migrations for specific app
+python manage.py migrate myapp
+
+# Apply migrations up to specific migration
+python manage.py migrate myapp 0003
+
+# Show migration plan without applying
+python manage.py migrate --plan
+
+# Apply migrations with verbosity
+python manage.py migrate --verbosity=2
+```
+
+**Migration Application Process:**
+
+```json
+{
+  "migrate_process": {
+    "step_1": "Django checks django_migrations table for applied migrations",
+    "step_2": "Identifies which migrations need to be applied",
+    "step_3": "Applies migrations in dependency order",
+    "step_4": "Wraps each migration in a database transaction (by default)",
+    "step_5": "Records successful migrations in django_migrations table",
+    "step_6": "Rolls back transaction if any migration fails"
+  },
+  
+  "database_changes": {
+    "schema_modifications": "CREATE TABLE, ALTER TABLE, DROP TABLE, etc.",
+    "data_migrations": "INSERT, UPDATE, DELETE operations on existing data",
+    "index_creation": "CREATE INDEX for performance optimization"
+  }
+}
+```
+
+### Advanced Migration Scenarios
+
+#### 1. Custom Data Migrations
+
+```python
+# migrations/0003_populate_category_data.py
+from django.db import migrations
+
+def populate_categories(apps, schema_editor):
+    """Forward migration: populate categories"""
+    Category = apps.get_model('myapp', 'Category')
+    categories = [
+        {'name': 'Electronics', 'description': 'Electronic devices and accessories'},
+        {'name': 'Clothing', 'description': 'Apparel and fashion items'},
+        {'name': 'Books', 'description': 'Books and educational materials'},
+    ]
+    for cat_data in categories:
+        Category.objects.create(**cat_data)
+
+def remove_categories(apps, schema_editor):
+    """Reverse migration: remove populated categories"""
+    Category = apps.get_model('myapp', 'Category')
+    Category.objects.filter(
+        name__in=['Electronics', 'Clothing', 'Books']
+    ).delete()
+
+class Migration(migrations.Migration):
+    dependencies = [
+        ('myapp', '0002_add_category_model'),
+    ]
+
+    operations = [
+        migrations.RunPython(
+            populate_categories,
+            reverse_code=remove_categories,
+        ),
+    ]
+```
+
+#### 2. Complex Field Transformations
+
+```python
+# migrations/0004_transform_price_field.py
+from django.db import migrations, models
+from decimal import Decimal
+
+def convert_price_to_cents(apps, schema_editor):
+    """Convert price from dollars to cents"""
+    Product = apps.get_model('myapp', 'Product')
+    for product in Product.objects.all():
+        if product.price_dollars:
+            product.price_cents = int(product.price_dollars * 100)
+            product.save()
+
+def convert_price_to_dollars(apps, schema_editor):
+    """Convert price from cents back to dollars"""  
+    Product = apps.get_model('myapp', 'Product')
+    for product in Product.objects.all():
+        if product.price_cents:
+            product.price_dollars = Decimal(product.price_cents) / 100
+            product.save()
+
+class Migration(migrations.Migration):
+    dependencies = [
+        ('myapp', '0003_add_price_cents_field'),
+    ]
+
+    operations = [
+        # Step 1: Populate new field
+        migrations.RunPython(
+            convert_price_to_cents,
+            reverse_code=convert_price_to_dollars,
+        ),
+        # Step 2: Remove old field
+        migrations.RemoveField(
+            model_name='product',
+            name='price_dollars',
+        ),
+        # Step 3: Rename new field to match original
+        migrations.RenameField(
+            model_name='product',
+            old_name='price_cents',
+            new_name='price',
+        ),
+    ]
+```
+
+### Migration Rollback Strategies
+
+#### Understanding Migration Rollback
+
+```mermaid
+graph TB
+    A[Current State: 0005_latest] --> B[Identify Target: 0003_stable]
+    B --> C[python manage.py migrate myapp 0003]
+    C --> D[Django Reverses Migrations]
+    D --> E[0005 → 0004 → 0003]
+    E --> F[Database at 0003 State]
+    
+    G[Migration 0004] --> H[Has reverse_code?]
+    H -->|Yes| I[Execute Reverse Operations]
+    H -->|No| J[ERROR: Irreversible Migration]
+    I --> K[Successfully Reversed]
+    J --> L[Manual Intervention Required]
+    
+    style F fill:#e8f5e8
+    style K fill:#e8f5e8
+    style L fill:#ffebee
+```
+
+#### Basic Rollback Commands
+
+```bash
+# Roll back to specific migration
+python manage.py migrate myapp 0003
+
+# Roll back all migrations for an app (be careful!)
+python manage.py migrate myapp zero
+
+# Roll back last migration
+python manage.py migrate myapp 0004  # if currently at 0005
+
+# Show current migration status
+python manage.py showmigrations
+
+# Show migrations for specific app
+python manage.py showmigrations myapp
+
+# Show detailed migration info
+python manage.py showmigrations --plan
+```
+
+#### Safe Rollback Patterns
+
+```python
+# Example: Safe rollback-ready migration
+from django.db import migrations, models
+
+class Migration(migrations.Migration):
+    dependencies = [
+        ('myapp', '0005_previous_migration'),
+    ]
+    
+    # Mark as atomic for safety
+    atomic = True
+    
+    operations = [
+        migrations.AddField(
+            model_name='product',
+            name='new_field',
+            field=models.CharField(max_length=100, null=True),
+            # null=True makes rollback safe - no data loss
+        ),
+    ]
+```
+
+#### Handling Irreversible Migrations
+
+```python
+# migrations/0006_irreversible_example.py
+from django.db import migrations
+
+def complex_data_transformation(apps, schema_editor):
+    """Complex transformation that can't be easily reversed"""
+    Product = apps.get_model('myapp', 'Product')
+    # Complex data transformation logic here
+    pass
+
+class Migration(migrations.Migration):
+    dependencies = [
+        ('myapp', '0005_previous'),
+    ]
+
+    operations = [
+        migrations.RunPython(
+            complex_data_transformation,
+            reverse_code=migrations.RunPython.noop,  # Explicitly irreversible
+        ),
+    ]
+    
+    # Alternative: raise exception on reverse
+    # operations = [
+    #     migrations.RunPython(
+    #         complex_data_transformation,
+    #         reverse_code=lambda apps, schema_editor: 
+    #             raise NotImplementedError("This migration is irreversible")
+    #     ),
+    # ]
+```
+
+### Production Migration Best Practices
+
+#### 1. Pre-deployment Migration Checklist
+
+```json
+{
+  "migration_checklist": {
+    "before_creating": [
+      "Backup database before making changes",
+      "Test migrations on copy of production data",
+      "Review migration files for potential issues",
+      "Check for data loss possibilities"
+    ],
+    
+    "during_creation": [
+      "Use descriptive migration names",
+      "Keep migrations atomic when possible", 
+      "Add null=True for new required fields initially",
+      "Consider performance impact of migrations"
+    ],
+    
+    "before_deployment": [
+      "Test rollback procedures",
+      "Ensure migrations work with existing data",
+      "Check migration dependencies",
+      "Plan for zero-downtime deployment if needed"
+    ]
+  }
+}
+```
+
+#### 2. Zero-Downtime Migration Patterns
+
+```python
+# Phase 1: Add new field (nullable)
+class Migration(migrations.Migration):
+    operations = [
+        migrations.AddField(
+            model_name='product',
+            name='new_status',
+            field=models.CharField(max_length=20, null=True),
+        ),
+    ]
+
+# Phase 2: Populate new field (data migration)  
+class Migration(migrations.Migration):
+    operations = [
+        migrations.RunPython(populate_new_status_field),
+    ]
+
+# Phase 3: Make field non-nullable
+class Migration(migrations.Migration):
+    operations = [
+        migrations.AlterField(
+            model_name='product', 
+            name='new_status',
+            field=models.CharField(max_length=20, default='active'),
+        ),
+    ]
+```
+
+#### 3. Performance-Aware Migrations
+
+```python
+# Efficient migration for large tables
+from django.db import migrations, models
+
+class Migration(migrations.Migration):
+    # Set atomic=False for large data migrations
+    atomic = False
+    
+    dependencies = [
+        ('myapp', '0007_previous'),
+    ]
+
+    operations = [
+        migrations.RunSQL(
+            # Use raw SQL for better performance on large tables
+            "UPDATE myapp_product SET status = 'active' WHERE status IS NULL;",
+            reverse_sql="UPDATE myapp_product SET status = NULL WHERE status = 'active';",
+        ),
+    ]
+```
+
+### Troubleshooting Common Migration Issues
+
+#### 1. Migration Conflicts
+
+```bash
+# When multiple developers create migrations simultaneously
+python manage.py makemigrations --merge
+
+# Manually resolve conflicts in migration files
+# Then apply the merged migration
+python manage.py migrate
+```
+
+#### 2. Fake Migrations (Advanced)
+
+```bash
+# Mark migration as applied without running it
+python manage.py migrate --fake myapp 0003
+
+# Fake apply all migrations (dangerous!)
+python manage.py migrate --fake
+
+# Use case: When you've manually applied schema changes
+# and need to sync Django's migration state
+```
+
+#### 3. Migration State Debugging
+
+```bash
+# Show detailed migration status
+python manage.py showmigrations --plan
+
+# Show SQL that would be executed
+python manage.py sqlmigrate myapp 0003
+
+# Check for migration issues
+python manage.py check
+
+# Show migration history
+python manage.py showmigrations -v 2
+```
+
+### Advanced Migration Patterns
+
+#### 1. Multi-Database Migrations
+
+```python
+# settings.py
+DATABASE_ROUTERS = ['myapp.routers.DatabaseRouter']
+
+# routers.py
+class DatabaseRouter:
+    def allow_migrate(self, db, app_label, model_name=None, **hints):
+        if app_label == 'analytics':
+            return db == 'analytics_db'
+        return db == 'default'
+
+# Migrate specific database
+python manage.py migrate --database=analytics_db
+```
+
+#### 2. Conditional Migrations
+
+```python
+from django.db import migrations, connection
+
+def conditional_operation(apps, schema_editor):
+    """Only run if specific condition is met"""
+    if connection.vendor == 'postgresql':
+        # PostgreSQL-specific operation
+        schema_editor.execute("CREATE INDEX CONCURRENTLY ...")
+    else:
+        # Fallback for other databases
+        schema_editor.execute("CREATE INDEX ...")
+
+class Migration(migrations.Migration):
+    operations = [
+        migrations.RunPython(conditional_operation),
+    ]
+```
+
+#### 3. Migration Testing
+
+```python
+# tests/test_migrations.py
+from django_migration_testcase import MigrationTest
+
+class TestMigration0003(MigrationTest):
+    migrate_from = '0002'
+    migrate_to = '0003'
+    
+    def test_migration_populates_categories(self):
+        """Test that migration properly populates category data"""
+        Category = self.apps.get_model('myapp', 'Category')
+        
+        # Test data exists after migration
+        self.assertEqual(Category.objects.count(), 3)
+        self.assertTrue(
+            Category.objects.filter(name='Electronics').exists()
+        )
+```
+
+### Migration Monitoring and Maintenance
+
+#### 1. Migration Health Check
+
+```python
+# management/commands/check_migrations.py
+from django.core.management.base import BaseCommand
+from django.db import connection
+
+class Command(BaseCommand):
+    def handle(self, *args, **options):
+        """Check for unapplied migrations"""
+        with connection.cursor() as cursor:
+            cursor.execute("""
+                SELECT app, name FROM django_migrations 
+                ORDER BY applied DESC LIMIT 10
+            """)
+            recent_migrations = cursor.fetchall()
+            
+        self.stdout.write(
+            f"Recent migrations: {recent_migrations}"
+        )
+```
+
+#### 2. Migration Performance Monitoring
+
+```python
+# Custom migration class with timing
+from django.db import migrations
+import time
+import logging
+
+logger = logging.getLogger(__name__)
+
+class TimedMigration(migrations.Migration):
+    def apply(self, project_state, schema_editor, collect_sql=False):
+        start_time = time.time()
+        result = super().apply(project_state, schema_editor, collect_sql)
+        duration = time.time() - start_time
+        
+        logger.info(f"Migration {self.name} took {duration:.2f} seconds")
+        return result
+```
+
+---
+
+## 📋 **Django ORM Cheat Sheet**
+
+### ⚡ **Quick Commands Reference**
+
+| Operation | Command | Example |
+|-----------|---------|---------|
+| **Create Model** | `python manage.py makemigrations` | Creates migration files |
+| **Apply Migration** | `python manage.py migrate` | Updates database schema |
+| **Create Object** | `Model.objects.create()` | `Product.objects.create(name='iPhone')` |
+| **Get All** | `Model.objects.all()` | `Product.objects.all()` |
+| **Filter** | `Model.objects.filter()` | `Product.objects.filter(price__gt=100)` |
+| **Get One** | `Model.objects.get()` | `Product.objects.get(id=1)` |
+| **Update** | `obj.save()` or `queryset.update()` | `product.price = 200; product.save()` |
+| **Delete** | `obj.delete()` or `queryset.delete()` | `product.delete()` |
+
+### 🔍 **Common Field Lookups**
+
+```python
+# Text searches
+Product.objects.filter(name__icontains='iphone')     # Case-insensitive contains
+Product.objects.filter(name__startswith='Mac')      # Starts with
+Product.objects.filter(description__isnull=True)    # Is null
+
+# Numeric comparisons  
+Product.objects.filter(price__gt=100)               # Greater than
+Product.objects.filter(price__lte=500)              # Less than or equal
+Product.objects.filter(price__range=(100, 500))     # Between values
+
+# Date filtering
+Order.objects.filter(created_at__date='2024-01-15') # Specific date
+Order.objects.filter(created_at__year=2024)         # Year
+Order.objects.filter(created_at__month=1)           # Month
+```
+
+### 🚀 **Performance Quick Wins**
+
+```python
+# ✅ Good - Use select_related for ForeignKey
+products = Product.objects.select_related('category').all()
+
+# ✅ Good - Use prefetch_related for reverse ForeignKey/ManyToMany  
+categories = Category.objects.prefetch_related('products').all()
+
+# ✅ Good - Only fetch needed fields
+products = Product.objects.only('name', 'price')
+
+# ❌ Bad - N+1 query problem
+for product in Product.objects.all():
+    print(product.category.name)  # Hits database for each product
+```
+
+---
+
 ## 🟢 **BEGINNER LEVEL: Django ORM Basics**
 
-### What is Django ORM? (Simple Explanation)
+> **📍 You are here:** Beginner Level → Django ORM Basics  
+> **⏱️ Estimated time:** 30 minutes  
+> **🎯 Goal:** Understand Django ORM fundamentals and create your first models
+
+### 📚 **What is Django ORM? (Simple Explanation)**
 
 **Think of Django ORM like a translator between Python and your database:**
 
