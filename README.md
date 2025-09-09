@@ -110,7 +110,7 @@ graph TD
 19. **[⚡ Performance Testing](#performance-testing)** - *Load testing database operations*
 20. **[🚀 Production Deployment](#production-ready-patterns)** - *Going live safely*
 
----
+<!-- ---
 
 ### 📖 **Quick Reference Sections**
 
@@ -121,7 +121,7 @@ graph TD
 | ⚙️ **Development** | Advanced patterns, optimization | 45 minutes |
 | 🔍 **Querying** | Complex queries, aggregations | 1 hour |
 | 🚀 **Performance** | Scaling, caching, monitoring | 45 minutes |
-| 🧪 **Testing** | Testing strategies, deployment | 30 minutes |
+| 🧪 **Testing** | Testing strategies, deployment | 30 minutes | -->
 
 ### 💡 **Quick Access**
 - **[📋 Cheat Sheet](#-django-orm-cheat-sheet)** - *Most common operations*
